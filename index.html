@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>look@me! - obtain</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+    *{
+        margin: 0px;
+        padding: 0px;
+      }
+
+    #landing {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+    #intro {
+       
+        display: flex;
+        font-size: 64px;
+        justify-content: center;
+        align-items: flex-start;
+        color: whitesmoke;
+        font-family: 'Jersey 25', sans-serif;
+
+        animation: fadeIn 3s ease-in-out;
+        opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes bounce {
+
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+      
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    
+    #landing-star {
+      scale: 0.75;
+      image-rendering: pixelated;
+      animation: bounce 5s infinite;
+      object-fit: cover;
+
+    }
+
+    #landing-star:hover {
+      scale: .8;
+      image-rendering: pixelated;
+      transition: all 0.5s ease-in-out;
+      
+    }
+    body {
+      background-color: rgb(159, 173, 179);
+    }
+    
+    
+
+    </style>
+  </head>
+  <body>
+
+    
+
+    <div id = "landing">
+      <a href="character.html">
+      <img id = "landing-star" src="imgs\main menu star.png" />
+      </a>
+      
+      <div id = "intro"> 
+        The light calls to you...
+        Will you answer?
+      </div>
+    </div>
+    
+  </body>
+</html>

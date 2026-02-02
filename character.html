@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>look@me! - shift</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body { 
+        background-color: rgb(159, 173, 179);
+        justify-content: center;
+    }  
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translatey(-10px);
+        }
+        50% {
+            transform: translatey(-30px);
+
+        }
+    }
+
+    .character-image {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        z-index: 1;
+        
+        align-items: center;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .char-hair, .char-skin, .char-eyes, .char-mouth, .char-eyebrows, .char-top, .char-pants, .char-shoe, .char-sleeves {
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        transform: translateX(125px);
+    }
+
+    .container {
+        display: flex;
+        flex-flow: column wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+       
+    } 
+
+    .items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+
+        width: 10vw;
+        height: 20vh;
+        
+
+        background-color: rgb(198, 209, 212);
+        border: 2px solid rgb(255, 255, 255);
+        border-style: dashed;
+        margin: auto;
+        padding: 20px;
+        
+        color: thistle;
+    }
+    .menu-grid {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        
+        border: 5px solid rgb(86, 95, 99);
+        height: 70vh; width: 50vw;
+        background-color: rgb(210, 223, 235);
+    }
+    
+    .previmg .hair img, .previmg .eyes img, .previmg .eyebrows img, .previmg .mouth img {
+        transform: translateY(20vh);
+        scale: .45;
+    }
+
+    .previmg .top img, .previmg .sleeve img {
+        scale: .5;
+    }
+
+    .previmg .pants img, .previmg .shoe img {
+        transform: translateY(-15vh);
+        scale: .5;
+    }
+    .previmg img:hover {
+        scale: 40%;
+        transition: all 0.3s ease-in-out;
+        object-fit: contain;  
+    }
+
+    .previmg img {
+        scale: 0.45;
+        object-fit: contain;
+        max-height: 100vh;
+        
+    }
+
+    
+
+
+
+    .tabs button {
+        height: 5vh;
+        width: 5vw;
+        border: 2px solid rgb(86, 95, 99);
+        background-color: rgb(198, 209, 212);
+        font-size: 1.2rem;
+        font-family: 'Jersey 25', cursive;
+        word-wrap: break-word;
+        cursor: pointer;
+        
+    }
+
+    .okay-button {
+        height: 5vh;
+        width: 5vw;
+        border: 2px solid rgb(86, 95, 99);
+        background-color: rgb(138, 212, 233);
+        font-family: 'Jersey 25', cursive;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .okay-button:hover {
+        color: white;
+        
+    }
+
+    .hair, .eyes, .mouth, .eyebrows, .top, .pants, .shoe , .sleeve {
+        display: none;
+    }
+
+    .okay-button {
+        display: flex;
+        height: 10vh;
+        width: 10vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class = "character-image">
+            <img class="char-skin" src="imgs/skin0.png">
+            <img class="char-shoe" src="">
+            <img class="char-pants" src="">
+            <img class="char-eyes" src="">
+            <img class="char-mouth" src="">
+            <img class="char-eyebrows" src="">
+            <img class="char-hair" src="">
+            <img class= "char-sleeves" src="">
+            <img class="char-top" src="">
+            
+        </div>
+        <div class = "menu-grid previmg">
+            <div class="items skin" id="item-1"><img src="imgs\skin1.png"></div>
+            <div class="items skin" id="item-2"><img src="imgs\skin2.png"></div>
+            <div class="items skin" id="item-3"><img src="imgs\skin3.png"></div>
+            <div class="items skin" id="item-4"><img src="imgs\skin4.png"></div>
+            <div class="items skin" id="item-5"><img src="imgs\skin5.png"></div>
+            <div class="items skin" id="item-6"><img src="imgs\skin6.png"></div> 
+
+            <div class="items hair" id="item-1"><img src="imgs/hair1.png"></div>
+            <div class="items hair" id="item-2"><img src="imgs/hair2.png"></div>
+            <div class="items hair" id="item-3"><img src="imgs/hair3.png"></div>
+            <div class="items hair" id="item-4"><img src="imgs/hair4.png"></div>
+            <div class="items hair" id="item-5"><img src="imgs/hair5.png"></div>
+            <div class="items hair" id="item-6"><img src="imgs/hair6.png"></div>
+
+            <div class="items eyes" id="item-1"><img src="imgs/eyes1.png"></div>
+            <div class="items eyes" id="item-2"><img src="imgs/eyes2.png"></div>
+            <div class="items eyes" id="item-3"><img src="imgs/eyes3.png"></div>
+            <div class="items eyes" id="item-4"><img src="imgs/eyes4.png"></div>
+            <div class="items eyes" id="item-5"><img src="imgs/eyes5.png"></div>
+            <div class="items eyes" id="item-6"><img src="imgs/eyes6.png"></div>
+
+            <div class="items mouth" id="item-1"><img src="imgs/mouth1.png"></div>
+            <div class="items mouth" id="item-2"><img src="imgs/mouth2.png"></div>
+            <div class="items mouth" id="item-3"><img src="imgs/mouth3.png"></div>
+            <div class="items mouth" id="item-4"><img src="imgs/mouth4.png"></div>
+            <div class="items mouth" id="item-5"><img src="imgs/mouth5.png"></div>
+            <div class="items mouth" id="item-6"><img src="imgs/mouth6.png"></div>
+
+            <div class="items eyebrows" id="item-1"><img src="imgs/eyebrows1.png"></div>
+            <div class="items eyebrows" id="item-2"><img src="imgs/eyebrows2.png"></div>
+            <div class="items eyebrows" id="item-3"><img src="imgs/eyebrows3.png"></div>
+            <div class="items eyebrows" id="item-4"><img src="imgs/eyebrows4.png"></div>
+            <div class="items eyebrows" id="item-5"><img src="imgs/eyebrows5.png"></div>
+            <div class="items eyebrows" id="item-6"><img src="imgs/eyebrows6.png"></div>
+
+            <div class="items top" id="item-1"><img src="imgs/top1.png"></div>
+            <div class="items top" id="item-2"><img src="imgs/top2.png"></div>
+            <div class="items top" id="item-3"><img src="imgs/top3.png"></div>
+            <div class="items top" id="item-4"><img src="imgs/top4.png"></div>
+            <div class="items top" id="item-5"><img src="imgs/top5.png"></div>
+            <div class="items top" id="item-6"><img src="imgs/top6.png"></div>
+
+            <div class="items pants" id="item-1"><img src="imgs/pants1.png"></div>
+            <div class="items pants" id="item-2"><img src="imgs/pants2.png"></div>
+            <div class="items pants" id="item-3"><img src="imgs/pants3.png"></div>
+            <div class="items pants" id="item-4"><img src="imgs/pants4.png"></div>
+            <div class="items pants" id="item-5"><img src="imgs/pants5.png"></div>
+            <div class="items pants" id="item-6"><img src="imgs/pants6.png"></div>
+
+            <div class="items shoe" id="item-1"><img src="imgs/shoe1.png"></div>
+            <div class="items shoe" id="item-2"><img src="imgs/shoe2.png"></div>
+            <div class="items shoe" id="item-3"><img src="imgs/shoe3.png"></div>
+            <div class="items shoe" id="item-4"><img src="imgs/shoe4.png"></div>
+            <div class="items shoe" id="item-5"><img src="imgs/shoe5.png"></div>
+            <div class="items shoe" id="item-6"><img src="imgs/shoe6.png"></div>
+            
+            <div class="items sleeve" id="item-1"><img src="imgs/sleeve1.png"></div>
+            <div class="items sleeve" id="item-2"><img src="imgs/sleeve2.png"></div>
+            <div class="items sleeve" id="item-3"><img src="imgs/sleeve3.png"></div>
+            <div class="items sleeve" id="item-4"><img src="imgs/sleeve4.png"></div>
+            <div class="items sleeve" id="item-5"><img src="imgs/sleeve5.png"></div>
+            <div class="items sleeve" id="item-6"><img src="imgs/sleeve6.png"></div>
+            
+        </div>
+        <div class = "tabs"> 
+            <button id="skin-tab"> skin </button>
+            <button id="hair-tab"> hair </button>
+            <button id="eyes-tab"> eyes </button>
+            <button id="mouth-tab"> mouth </button>
+            <button id="eyebrows-tab"> eyebrows </button>
+            <button id="top-tab"> top </button>
+            <button id="sleeve-tab"> sleeve </button>
+            <button id="pants-tab"> pants </button>
+            <button id="shoe-tab"> shoe </button>
+
+            
+        </div>
+        <a href="finish.html" class="okay-button"> OK!</a>
+        <div> warning! work in progress ... more coming soon! ^_^ </div>
+    </div>
+    
+    <script>
+        const swapTab = document.querySelectorAll('.tabs button');
+        
+        const swapSkin = document.querySelectorAll('.skin img');
+        const swapHair = document.querySelectorAll('.hair img');
+        const swapEyes = document.querySelectorAll('.eyes img');
+        const swapMouth = document.querySelectorAll('.mouth img');
+        const swapEyebrows = document.querySelectorAll('.eyebrows img');
+        const swapTop = document.querySelectorAll('.top img');
+        const swapPants = document.querySelectorAll('.pants img');
+        const swapShoe = document.querySelectorAll('.shoe img');
+        const swapSleeve = document.querySelectorAll('.sleeve img');
+
+        const hairItems = document.querySelectorAll('.hair');
+        const skinItems = document.querySelectorAll('.skin');
+        const eyesItems = document.querySelectorAll('.eyes');
+        const mouthItems = document.querySelectorAll('.mouth');
+        const eyebrowsItems = document.querySelectorAll('.eyebrows');
+        const topItems = document.querySelectorAll('.top');
+        const pantsItems = document.querySelectorAll('.pants');
+        const shoeItems = document.querySelectorAll('.shoe');
+        const sleeveItems = document.querySelectorAll('.sleeve');
+
+     
+
+        function changeSkin(event) {
+            const selectedSkinSrc = event.target.src;
+            const characterSkin = document.querySelector('.char-skin');
+            characterSkin.src = selectedSkinSrc;
+        }
+    
+        swapSkin.forEach(skin => {
+            skin.addEventListener('click', changeSkin);
+        });
+
+        function changeHair(event) {
+            const selectedHairSrc = event.target.src;
+            const characterHair = document.querySelector('.char-hair');
+            characterHair.src = selectedHairSrc;
+        }
+
+        swapHair.forEach(hair => {
+            hair.addEventListener('click', changeHair);
+        });
+
+        function changeEyes(event) {
+            const selectedEyesSrc = event.target.src;
+            const characterEyes = document.querySelector('.char-eyes');
+            characterEyes.src = selectedEyesSrc;
+        }
+
+        swapEyes.forEach(eyes => {
+            eyes.addEventListener('click', changeEyes);
+        });
+
+        function changeMouth(event) {
+            const selectedMouthSrc = event.target.src;
+            const characterMouth = document.querySelector('.char-mouth');
+            characterMouth.src = selectedMouthSrc;
+        }
+
+        swapMouth.forEach(mouth => {
+            mouth.addEventListener('click', changeMouth);
+        });
+
+        function changeEyebrows(event) {
+            const selectedEyebrowsSrc = event.target.src;
+            const characterEyebrows = document.querySelector('.char-eyebrows');
+            characterEyebrows.src = selectedEyebrowsSrc;
+        }
+
+        swapEyebrows.forEach(eyebrow => {
+            eyebrow.addEventListener('click', changeEyebrows);
+        });
+
+        function changeTop(event) {
+            const selectedTopSrc = event.target.src;
+            const characterTop = document.querySelector('.char-top');
+            characterTop.src = selectedTopSrc;
+        }
+
+        swapTop.forEach(top => {
+            top.addEventListener('click', changeTop);
+        });
+
+        function changePants(event) {
+            const selectedPantsSrc = event.target.src;
+            const characterPants = document.querySelector('.char-pants');
+            characterPants.src = selectedPantsSrc;
+        }
+
+        swapPants.forEach(pants => {
+            pants.addEventListener('click', changePants);
+        });
+
+        function changeShoe(event) {
+            const selectedShoeSrc = event.target.src;
+            const characterShoe = document.querySelector('.char-shoe');
+            characterShoe.src = selectedShoeSrc;
+        }
+
+        swapShoe.forEach(shoe => {
+            shoe.addEventListener('click', changeShoe);
+        });
+
+        function changeSleeve(event) {
+            const selectedSleeveSrc = event.target.src;
+            const characterSleeve = document.querySelector('.char-sleeves');
+            characterSleeve.src = selectedSleeveSrc;
+        }
+
+        swapSleeve.forEach(sleeve => {
+            sleeve.addEventListener('click', changeSleeve);
+        });
+
+        function changeTab(event) {
+            const tabId = event.target.id;
+            if (tabId === 'skin-tab') {
+                skinItems.forEach(item => item.style.display = 'flex');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'hair-tab') {
+                hairItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'eyes-tab') {
+                eyesItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none'); 
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'mouth-tab') {
+                mouthItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'eyebrows-tab') {
+                eyebrowsItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'top-tab') {
+                topItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+
+            } else if (tabId === 'pants-tab') {
+                pantsItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+            } else if (tabId === 'shoe-tab') {
+                shoeItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                sleeveItems.forEach(item => item.style.display = 'none');
+            } else if (tabId === 'sleeve-tab') {
+                sleeveItems.forEach(item => item.style.display = 'flex');
+                skinItems.forEach(item => item.style.display = 'none');
+                hairItems.forEach(item => item.style.display = 'none');
+                eyesItems.forEach(item => item.style.display = 'none');
+                mouthItems.forEach(item => item.style.display = 'none');
+                eyebrowsItems.forEach(item => item.style.display = 'none');
+                topItems.forEach(item => item.style.display = 'none');
+                pantsItems.forEach(item => item.style.display = 'none');
+                shoeItems.forEach(item => item.style.display = 'none');
+            }
+            
+        }
+        
+        swapTab.forEach(tab => {
+            tab.addEventListener('click', changeTab);
+           
+        });
+        
+        swapTab.forEach(tab => {
+            tab.addEventListener('click', () => {
+                swapTab.forEach(t => t.style.backgroundColor = 'rgb(198, 209, 212)');
+                tab.style.backgroundColor = 'rgb(138, 212, 233)';
+                swapTab.forEach(t => t.style.color = 'black');
+                tab.style.color = 'white';
+            });
+           
+        });
+    </script>
+</body>
+</html>
