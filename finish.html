@@ -23,6 +23,7 @@
         height: 100vh;
         width: 100vw;
         font-size: 1rem;
+        animation: float 6s infinite;
         
     }
 
@@ -30,7 +31,28 @@
         background-color: rgb(159, 173, 179);
         font-family: 'Jersey 25', sans-serif; 
         flex-direction: row;
+        animation: fadeIn 2s ease-in;
         
+        opacity: 1;
+        
+    }
+     @keyframes float {
+        0%, 100% {
+            transform: translatey(-10px);
+        }
+        50% {
+            transform: translatey(-30px);
+
+        }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
     .okay-button {
         display: flex;
