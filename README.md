@@ -1,5 +1,5 @@
 # look@ME! character creator project v1.1 <br>
-finalized 1 february 2026 <br>
+finalized 18 may 2026 <br>
 created by savv omare (rayzaria)
 
 ### features:
@@ -8,3 +8,6 @@ created by savv omare (rayzaria)
 <li>added animations and page transitions to the site.</li> <br>
 
 more should be available within time! please be patient ~ (❁´◡`❁)
+
+update (5.19)
+> replaced skin tones and hair options temporarily
